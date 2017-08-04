@@ -9,12 +9,12 @@ class BicyclesController < ApplicationController
 
   def new
     @bicycle = Bicycle.new
-    @category = Category.all.map{ |c| [ c.name, c.id ]}
+    @categories = Category.all.map{ |c| [ c.name, c.id ]}
   end
 
   def edit
     @bicycle = Bicycle.find(params[:id])
-    @category = Category.all.map{ |c| [ c.name, c.id ]}
+    @categories = Category.all.map{ |c| [ c.name, c.id ]}
   end
 
   def create

@@ -1,0 +1,43 @@
+<div class="new-article">
+  <%= form_for @bicycle do |f| %>
+
+      <% if @bicycle.errors.any? %>
+          <div id="error_explanation">
+            <h2>
+              <%= pluralize(@bicycle.errors.count, "error") %> prohibited
+              this bicycle from being saved:
+            </h2>
+            <ul>
+              <% @bicycle.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+
+      <div class="article-form">
+        <p>
+          <%= f.label :name %><br>
+          <%= f.text_field :name, class: "form-control form-new-article", style: "max-width: 500px;"%>
+        </p>
+
+        <p>
+          <%= f.label :desc %><br>
+          <%= f.text_area :desc, class: "form-control form-new-article-text textarea", rows: "3", style: "max-width: 500px;" %>
+        </p>
+
+        <%= select_tag(:category_id, options_for_select(@categories), {:class => 'btn btn-default', :style => 'height: 30px'}) %>
+
+        <% if current_page?(new_bicycle_path) %>
+            <p>
+              <%= f.submit 'Create Bicycle', :class => 'btn btn-default' %>
+            </p>
+        <% elsif current_page?(edit_bicycle_path) %>
+            <p>
+              <%= f.submit 'Update Bicycle', :class => 'btn btn-default' %>
+            </p>
+        <% end %>
+      </div>
+
+  <% end %>
+</div>
