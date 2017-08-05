@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4d49a72-bac5-44c7-bdb8-8d73b7167e16" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/bugcycle.iml" afterPath="$PROJECT_DIR$/.idea/bugcycle.iml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/config/initializers/paper_trail.rb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/bicycles_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/bicycles_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/bicycle.rb" afterPath="$PROJECT_DIR$/app/models/bicycle.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/development.rb" afterPath="$PROJECT_DIR$/config/environments/development.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bicycles/index.erb" afterPath="$PROJECT_DIR$/app/views/bicycles/index.erb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -30,8 +25,8 @@
       <file leaf-file-name="bicycles_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/bicycles_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="19" column="57" lean-forward="false" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
+            <state relative-caret-position="105">
+              <caret line="7" column="57" lean-forward="false" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -57,17 +52,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="paper_trail.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/initializers/paper_trail.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="44" lean-forward="false" selection-start-line="0" selection-start-column="44" selection-end-line="0" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Gemfile" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Gemfile" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="521">
@@ -87,6 +72,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="_form.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/bicycles/_form.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="452">
+              <caret line="36" column="42" lean-forward="false" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="20170805115549_rolify_create_roles.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/migrate/20170805115549_rolify_create_roles.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -100,8 +95,8 @@
       <file leaf-file-name="bicycle.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/bicycle.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+            <state relative-caret-position="105">
+              <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -117,11 +112,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.erb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/bicycles/index.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+            <state relative-caret-position="60">
+              <caret line="4" column="41" lean-forward="false" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -154,17 +149,17 @@
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/categories/_form.erb" />
         <option value="$PROJECT_DIR$/app/controllers/categories_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/bicycles/index.erb" />
         <option value="$PROJECT_DIR$/config/environments/development.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20170804211717_add_user_id_to_bicycles.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20170805115549_rolify_create_roles.rb" />
         <option value="$PROJECT_DIR$/config/initializers/paper_trail.rb" />
-        <option value="$PROJECT_DIR$/app/models/bicycle.rb" />
         <option value="$PROJECT_DIR$/app/models/ability.rb" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/bicycles_controller.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/app/models/bicycle.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/bicycles_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/bicycles/index.erb" />
       </list>
     </option>
   </component>
@@ -506,6 +501,25 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
       <method />
     </configuration>
+    <configuration default="true" type="RubyRunConfigurationType" factoryName="Ruby">
+      <module name="" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest">
       <predefined_log_file id="RUBY_TESTUNIT" enabled="true" />
       <module name="" />
@@ -679,12 +693,12 @@
       <option name="presentableId" value="Default" />
       <updated>1501794897101</updated>
       <workItem from="1501794901218" duration="8747000" />
-      <workItem from="1501927468930" duration="11768000" />
+      <workItem from="1501927468930" duration="14838000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20515000" />
+    <option name="totallyTimeSpent" value="23585000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="724" extended-state="6" />
@@ -797,6 +811,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="36" lean-forward="false" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -804,6 +819,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="3" lean-forward="false" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -850,14 +866,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bicycles/_form.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="42" lean-forward="false" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/categories/_form.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -897,14 +905,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bicycles/index.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20170804211717_add_user_id_to_bicycles.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -937,14 +937,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/bicycle.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/ability.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -961,18 +953,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/bicycles_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="19" column="57" lean-forward="false" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="521">
           <caret line="55" column="12" lean-forward="false" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/bicycle.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/bicycles/_form.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="36" column="42" lean-forward="false" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/bicycles_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="57" lean-forward="false" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/bicycles/index.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="41" lean-forward="false" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
           <folding />
         </state>
       </provider>

@@ -5,7 +5,12 @@ class BicyclesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @bicycles = Bicycle.order('created_at DESC')
+    @categories = Category.all.map{ |c| [ c.name, c.id ]}
+    if params[:bicycle]
+      @bicycles = Bicycle.filter(params[:bicycle][:category])
+    else
+      @bicycles = Bicycle.order('created_at DESC')
+    end
   end
 
   def show
@@ -18,10 +23,6 @@ class BicyclesController < ApplicationController
 
   def edit
     @categories = Category.all.map{ |c| [ c.name, c.id ]}
-
-      # unless bicycle_version.whodunnit.to_i == current_user.id
-      #   redirect_to bicycles_path, alert: "You've already made a suggestion"
-      # end
   end
 
   def create

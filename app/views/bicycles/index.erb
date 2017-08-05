@@ -1,3 +1,9 @@
+<%= form_tag bicycles_path, method: "get" do %>
+  <%= select "bicycle", "category", options_for_select(@categories),
+             { prompt: 'Select Category' } %>
+    <%= submit_tag "Filter", name: nil %>
+    <%= link_to 'Clear', bicycles_path %>
+<% end %>
 <% @bicycles.each do |bicycle| %>
   <%= link_to bicycle.name, bicycle_path(bicycle) %>
   <%= bicycle.desc %>
