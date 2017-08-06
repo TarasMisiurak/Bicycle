@@ -9,7 +9,7 @@ class BicyclesController < ApplicationController
     if params[:bicycle]
       @bicycles = Bicycle.filter(params[:bicycle][:category])
     else
-      @bicycles = Bicycle.order('created_at DESC')
+      @bicycles = Bicycle.search(params[:search]).order('created_at DESC')
     end
   end
 

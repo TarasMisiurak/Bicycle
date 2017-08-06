@@ -56,3 +56,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'cancancan', '~> 1.15'
 gem 'rolify', '~> 5.1'
+gem 'jquery-rails'

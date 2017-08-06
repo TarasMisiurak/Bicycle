@@ -13,3 +13,10 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+   $('#bicycles_search').submit(function() {
+       $.get(this.action, $(this).serialize(), null, 'script');
+       return false;
+   });
+});

@@ -1,8 +1,14 @@
-<%= form_tag bicycles_path, method: "get" do %>
-  <%= select "bicycle", "category", options_for_select(@categories),
-             { prompt: 'Select Category' } %>
-    <%= submit_tag "Filter", name: nil %>
+<%= form_tag bicycles_path, method: "get", id: "filter" do %>
+  <p><%= select "bicycle", "category", options_for_select(@categories),
+             { prompt: 'Select Category' }, onchange: "this.form.submit();" %>
     <%= link_to 'Clear', bicycles_path %>
+  </p>
+<% end %>
+<%= form_tag bicycles_path, method: 'get', id: "bicycles_search" do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", name: nil %>
+    </p>
 <% end %>
 <% @bicycles.each do |bicycle| %>
   <%= link_to bicycle.name, bicycle_path(bicycle) %>
