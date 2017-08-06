@@ -39,11 +39,24 @@ class BicyclesController < ApplicationController
 
   def update
     @bicycle.category_id = params[:category_id]
+    @suggestion = BicycleSuggestion.where(bicycle_id: @bicycle.id)
 
-    if @bicycle.update(bicycle_params)
-      redirect_to @bicycle
+    if @bicycle.user_id != current_user.id
+      if @suggestion.user_id != current_user.id
+        @bicycle_suggestion = BicycleSuggestion.new
+        @bicycle_suggestion.id = @bicycle.id
+        @bicycle_suggestion.user_id = current_user.id
+        @bicycle_suggestion.update(bicycle_params)
+        redirect_to @bicycle, notice: 'Your changes will appear after approval'
+      else
+        redirect_to @bicycle, notice: 'You\'ve already did a suggestion to this post'
+      end
     else
-      render 'edit'
+      if @bicycle.update(bicycle_params)
+        redirect_to @bicycle
+      else
+        render 'edit'
+      end
     end
   end
 

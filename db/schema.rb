@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170805115549) do
+ActiveRecord::Schema.define(version: 20170806170436) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bicycle_suggestions", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.text "desc"
+    t.string "image_url"
+    t.integer "user_id"
+    t.integer "bicycle_id"
+    t.integer "status", default: 1
+  end
 
   create_table "bicycles", force: :cascade do |t|
     t.string "name"
