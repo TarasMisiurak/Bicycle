@@ -1,0 +1,2 @@
+module ManagePanelHelper
+end

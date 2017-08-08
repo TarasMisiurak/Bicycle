@@ -7,9 +7,9 @@ class BicyclesController < ApplicationController
   def index
     @categories = Category.all.map{ |c| [ c.name, c.id ]}
     if params[:bicycle]
-      @bicycles = Bicycle.filter(params[:bicycle][:category])
+      @bicycles = Bicycle.paginate(:page => params[:page], :per_page => 10).filter(params[:bicycle][:category])
     else
-      @bicycles = Bicycle.search(params[:search]).order('created_at DESC')
+      @bicycles = Bicycle.paginate(:page => params[:page], :per_page => 10).search(params[:search]).order('created_at DESC')
     end
   end
 
@@ -42,11 +42,12 @@ class BicyclesController < ApplicationController
     @suggestion = BicycleSuggestion.where(bicycle_id: @bicycle.id)
 
     if @bicycle.user_id != current_user.id
-      if @suggestion.user_id != current_user.id
-        @bicycle_suggestion = BicycleSuggestion.new
-        @bicycle_suggestion.id = @bicycle.id
-        @bicycle_suggestion.user_id = current_user.id
-        @bicycle_suggestion.update(bicycle_params)
+      if @suggestion.blank? || @suggestion.user_id != current_user.id
+        # @bicycle_suggestion = BicycleSuggestion.new
+        # @bicycle_suggestion.id = @bicycle.id
+        # @bicycle_suggestion.user_id = current_user.id
+        # @bicycle_suggestion.update(bicycle_params)
+        # @bicycle_suggestion.save
         redirect_to @bicycle, notice: 'Your changes will appear after approval'
       else
         redirect_to @bicycle, notice: 'You\'ve already did a suggestion to this post'
@@ -64,6 +65,19 @@ class BicyclesController < ApplicationController
     @bicycle.destroy
 
     redirect_to bicycles_path
+  end
+
+  def favorite
+    type = params[:type]
+    if type == "favorite"
+      current_user.favorites << @bicycle
+      redirect_to root_path, notice: "You favorited #{@bicycle.name}"
+    elsif type == "unfavorite"
+      current_user.favorites.delete(@bicycle)
+      redirect_to root_path, notice: "Unfavorited #{@bicycle.name}"
+    else
+      redirect_to root_path, notice: "Nothing happened"
+    end
   end
 
   private

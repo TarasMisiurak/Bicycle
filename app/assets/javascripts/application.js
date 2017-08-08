@@ -14,6 +14,8 @@
 //= require turbolinks
 //= require_tree .
 
+//= require bootstrap.min
+
 $(function() {
    $('#bicycles_search').submit(function() {
        $.get(this.action, $(this).serialize(), null, 'script');

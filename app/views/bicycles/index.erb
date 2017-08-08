@@ -1,19 +1,50 @@
-<%= form_tag bicycles_path, method: "get", id: "filter" do %>
-  <p><%= select "bicycle", "category", options_for_select(@categories),
-             { prompt: 'Select Category' }, onchange: "this.form.submit();" %>
-    <%= link_to 'Clear', bicycles_path %>
-  </p>
-<% end %>
-<%= form_tag bicycles_path, method: 'get', id: "bicycles_search" do %>
-    <p>
-      <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag "Search", name: nil %>
-    </p>
-<% end %>
-<% @bicycles.each do |bicycle| %>
-  <%= link_to bicycle.name, bicycle_path(bicycle) %>
-  <%= bicycle.desc %>
-  <br>
-  <%= link_to 'Edit', edit_bicycle_path(bicycle) %>
-  <%= link_to 'Delete', bicycle_path(bicycle), method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
+<div class="row">
+  <div class="col-lg-2 col-lg-offset-7 col-md-2 col-md-offset-7 col-sm-12">
+    <div class="bicycle-filter">
+      <%= form_tag bicycles_path, method: "get", id: "filter" do %>
+        <div class="btn-group" role="group">
+          <p><%= select "bicycle", "category", options_for_select(@categories),
+               { prompt: 'Select Category' }, onchange: "this.form.submit();", class: "btn btn-default"%>
+            <%= link_to 'Clear', bicycles_path, class: "btn btn-default btn-xs"%>
+          </p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-lg-1 col-lg-offset-10 col-md-1 col-md-offset-1 col-sm-6">
+    <% if user_signed_in? %>
+      <div class="new-bicycle-button">
+        <%= link_to "New Bicycle", new_bicycle_path, class: "btn btn-default" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-12">
+    <% @bicycles.each do |bicycle| %>
+      <div>
+        <h4><%= link_to bicycle.name, bicycle_path(bicycle) %></h4>
+        <p><%= bicycle.desc %></p>
+        <h5>Category <%= link_to bicycle.category.name, categories_path(bicycle.category) %></h5>
+      </div>
+    <br>
+      <div>
+      <% if current_user %>
+        <% if bicycle.favorited_by.exists?(current_user.id) %>
+          <%= link_to favorite_bicycle_path(bicycle, type: "unfavorite"), method: :put, class: "btn btn-default btn-sm", title: "Remove from favorites" do %>
+              <span class="glyphicon glyphicon-star" style="color: #ffbb33"></span>
+          <% end %>
+        <% else %>
+          <%= link_to favorite_bicycle_path(bicycle, type: "unfavorite"), method: :put, class: "btn btn-default btn-sm", title: "Remove from favorites" do %>
+              <span class="glyphicon glyphicon-star" style="color: #ffbb33"></span>
+          <% end %>
+        <% end %>
+      <% end %>
+        <%= link_to 'Edit', edit_bicycle_path(bicycle), class: "btn btn-default btn-sm" %>
+        <%= link_to 'Delete', bicycle_path(bicycle), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>
+      </div>
+      <br>
+    <% end %>
+  </div>
+  <div class="pagination">
+    <%= will_paginate @posts %>
+  </div>
+</div>

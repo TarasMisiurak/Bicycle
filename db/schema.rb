@@ -10,20 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170806170436) do
+ActiveRecord::Schema.define(version: 20170808091106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bicycle_suggestions", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "bicycle_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
     t.text "desc"
     t.string "image_url"
-    t.integer "user_id"
-    t.integer "bicycle_id"
-    t.integer "status", default: 1
+    t.integer "category_id"
+    t.integer "status", default: 0
+    t.index ["bicycle_id"], name: "index_bicycle_suggestions_on_bicycle_id"
+    t.index ["user_id"], name: "index_bicycle_suggestions_on_user_id"
   end
 
   create_table "bicycles", force: :cascade do |t|
@@ -41,6 +44,26 @@ ActiveRecord::Schema.define(version: 20170806170436) do
     t.text "desc"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "favorite_bicycles", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "bicycle_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bicycle_id"], name: "index_favorite_bicycles_on_bicycle_id"
+    t.index ["user_id"], name: "index_favorite_bicycles_on_user_id"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "notified_by_id"
+    t.bigint "bicycle_suggestion_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bicycle_suggestion_id"], name: "index_notifications_on_bicycle_suggestion_id"
+    t.index ["notified_by_id"], name: "index_notifications_on_notified_by_id"
+    t.index ["user_id"], name: "index_notifications_on_user_id"
   end
 
   create_table "roles", id: :serial, force: :cascade do |t|
@@ -67,6 +90,8 @@ ActiveRecord::Schema.define(version: 20170806170436) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin", default: false
+    t.boolean "member", default: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -79,14 +104,9 @@ ActiveRecord::Schema.define(version: 20170806170436) do
     t.index ["user_id"], name: "index_users_roles_on_user_id"
   end
 
-  create_table "versions", force: :cascade do |t|
-    t.string "item_type", null: false
-    t.integer "item_id", null: false
-    t.string "event", null: false
-    t.string "whodunnit"
-    t.text "object"
-    t.datetime "created_at"
-    t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
-  end
-
+  add_foreign_key "bicycle_suggestions", "bicycles"
+  add_foreign_key "bicycle_suggestions", "users"
+  add_foreign_key "favorite_bicycles", "bicycles"
+  add_foreign_key "favorite_bicycles", "users"
+  add_foreign_key "notifications", "users"
 end

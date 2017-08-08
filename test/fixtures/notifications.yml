@@ -2,8 +2,10 @@
 
 one:
   user: one
-  bicycle: one
+  suggested_for_used: one
+  bicycle_suggestion: one
 
 two:
   user: two
-  bicycle: two
+  suggested_for_used: two
+  bicycle_suggestion: two

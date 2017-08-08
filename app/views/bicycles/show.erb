@@ -1,5 +1,18 @@
-<%= @bicycle.name %>
-<%= @bicycle.desc %>
-<br>
-<%= link_to 'Edit', edit_bicycle_path(@bicycle) %>
-<%= link_to 'Back', bicycles_path %>
+<div class="row">
+  <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-12">
+    <h3><%= @bicycle.name %></h3>
+    <h4><%= @bicycle.desc %></h4>
+    <br>
+    <% if @bicycle.favorited_by.exists?(current_user.id) %>
+        <%= link_to favorite_bicycle_path(@bicycle, type: "unfavorite"), method: :put, class: "btn btn-default btn-sm", title: "Remove from favorites" do %>
+            <span class="glyphicon glyphicon-star" style="color: #ffbb33"></span>
+        <% end %>
+    <% else %>
+        <%= link_to favorite_bicycle_path(@bicycle, type: "favorite"), method: :put, class: "btn btn-default btn-sm", title: "Add to favorites" do %>
+            <span class="glyphicon glyphicon-star" style="color: grey"></span>
+        <% end %>
+    <% end %>
+    <%= link_to 'Edit', edit_bicycle_path(@bicycle) %>
+    <%= link_to 'Back', bicycles_path %>
+  </div>
+</div>
